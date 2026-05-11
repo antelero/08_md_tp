@@ -1,0 +1,12 @@
+services:
+  notebook:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile.notebook
+    container_name: md_notebook
+    ports:
+      - "8888:8888"
+    volumes:
+      - ./:/workspace
+    working_dir: /workspace
+    restart: unless-stopped
